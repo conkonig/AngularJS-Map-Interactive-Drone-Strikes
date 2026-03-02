@@ -1,0 +1,119 @@
+<html>
+<body>
+	<h1 id="display">Loading..</h1>
+	<button onclick="restart()">Restart</button>
+	<button onclick="stop()">Stop!</button>
+</body>
+</html>
+<script>
+
+var newsArray = ['hello', 'goodbye', 'something'];   // your code puts strings into this array
+var curNewsIndex = -1;
+const myTimerId = setInterval(advanceNewsItem, 500);
+var timerActive = true;
+
+function advanceNewsItem() {
+	if(timerActive){
+	    ++curNewsIndex;
+		if (curNewsIndex >= newsArray.length) {
+			curNewsIndex = 0;
+		}
+		console.log(newsArray[curNewsIndex]);
+		setTickerNews(newsArray[curNewsIndex]);   // set new news item into the ticker
+	}
+}
+
+function start(){
+	timerActive = true;
+}
+
+function restart(){
+	//curNewsIndex = -1;
+	newsArray = ["this", "is", "another"];
+	timerActive = true;
+}
+
+function stop(){
+	timerActive = false;
+}
+
+function setTickerNews(msg){
+	var element = document.getElementById("display");
+	element.innerHTML = msg;
+}
+
+
+foreach(s in strikesOf2019){
+
+	dropMarker(s, 1000, stuff);
+
+}
+
+dropMarker(time){
+
+	doWithDelayPlease(animateThingy, time); /// creating delay timer for each 
+
+}
+
+// switch to using interval use 1 single timer which always runs.
+
+var strikesOfCurrentYear = [];
+var strikesOfProvinceOfYear = []; // array of arrays aka 2 dimensional array
+
+// All string arrays are really 2D because
+// fruit = ["apple", "orange", "banana"]; (strings)
+// and fruit[1] = ["o", "r", "a", "n", "g", "e"]; (chars
+
+function whenYearHasChanged(year){
+	window.currentMarkerIndex = -1
+	window.strikesOfCurrentYear = getStrikesByYear(year);	
+	foreach(yearStrike : strikesOfCurrentYear){
+		window.strikesOfProvinceOfYear.push(yearStrike.filterBy(province));
+	}	
+}
+
+
+
+function animateMarker(){
+        if(window.markersAreAnimated){
+            ++window.currentMarkerIndex;
+            console.log("tick tock ", currentMarkerIndex);
+            if (window.currentMarkerIndex < window.markersToDrop.length) {
+                addMarkerToMap(markersToDrop[currentMarkerIndex].position, markersToDrop[currentMarkerIndex].summary)
+            }else{
+				// window.markersAreAnimated = false;
+				resolve();
+            }
+        }
+    }
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
